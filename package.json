@@ -1,0 +1,32 @@
+{
+  "name": "personal-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "dependencies": {
+    "@vueuse/core": "^10.4.1",
+    "axios": "^1.5.0",
+    "markdown-it": "^13.0.1",
+    "pinia": "^2.1.6",
+    "prismjs": "^1.29.0",
+    "vue": "^3.3.4",
+    "vue-i18n": "^9.4.1",
+    "vue-router": "^4.2.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.3.4",
+    "@vue/eslint-config-prettier": "^8.0.0",
+    "eslint": "^8.49.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "gh-pages": "^6.3.0",
+    "prettier": "^3.0.3",
+    "sass": "^1.66.1",
+    "vite": "^4.4.9"
+  }
+}

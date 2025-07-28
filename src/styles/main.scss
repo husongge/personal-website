@@ -1,0 +1,173 @@
+@import 'variables';
+
+// 重置样式
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  line-height: 1.6;
+  color: var(--text-light);
+  background-color: var(--bg-light);
+  transition: all 0.3s ease;
+  margin: 0;
+  padding: 0;
+}
+
+// 移除暗黑模式切换，默认使用科技暗色主题
+
+// 通用样式
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+  
+  @include respond-to('lg') {
+    padding: 0 2rem;
+  }
+}
+
+.section {
+  padding: 4rem 0;
+  
+  @include respond-to('md') {
+    padding: 6rem 0;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &.btn-primary {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+    
+    &:hover {
+      background-color: var(--primary-dark);
+      border-color: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(9, 105, 218, 0.2);
+    }
+  }
+  
+  &.btn-outline {
+    background: var(--bg-light);
+    color: var(--primary-color);
+    border-color: var(--border-light);
+    
+    &:hover {
+      background-color: var(--bg-secondary-light);
+      border-color: var(--primary-color);
+      transform: translateY(-1px);
+    }
+  }
+}
+
+.card {
+  background: var(--bg-light);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+  transition: all 0.2s ease;
+  
+  &:hover {
+    border-color: var(--border-muted);
+    box-shadow: var(--shadow-light);
+    transform: translateY(-2px);
+  }
+}
+
+// 标题样式 - GitHub风格
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  
+  @include respond-to('md') {
+    font-size: 3rem;
+  }
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--border-muted);
+  
+  @include respond-to('md') {
+    font-size: 2rem;
+  }
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  
+  @include respond-to('md') {
+    font-size: 1.5rem;
+  }
+}
+
+// 动画
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+// 滚动条样式
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary-light);
+  
+  .dark-mode & {
+    background: var(--bg-secondary-dark);
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+  
+  &:hover {
+    background: var(--primary-dark);
+  }
+} 

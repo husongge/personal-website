@@ -1,0 +1,60 @@
+// 颜色变量
+:root {
+  // 主色调 - 温和灰色系
+  --primary-color: #24292f;
+  --primary-dark: #1c2128;
+  --primary-light: #32383f;
+  --accent-color: #0969da;
+  
+  // 背景色 - 白色主题
+  --bg-light: #ffffff;
+  --bg-dark: #ffffff;
+  --bg-secondary-light: #f6f8fa;
+  --bg-secondary-dark: #f1f3f4;
+  
+  // 文字颜色 - 白色主题
+  --text-light: #1f2328;
+  --text-dark: #1f2328;
+  --text-secondary-light: #656d76;
+  --text-secondary-dark: #8b949e;
+  --text-muted: #9a9a9a;
+  
+  // 边框颜色 - 白色主题
+  --border-light: #d1d9e0;
+  --border-dark: #d1d9e0;
+  --border-muted: #d8dee4;
+  
+  // 阴影 - 白色主题
+  --shadow-light: 0 8px 24px rgba(31, 35, 40, 0.04);
+  --shadow-dark: 0 16px 32px rgba(31, 35, 40, 0.06);
+  --shadow-card: 0 1px 3px rgba(31, 35, 40, 0.04), 0 1px 2px rgba(31, 35, 40, 0.06);
+  
+  // 字体 - GitHub风格
+  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+  --font-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  
+  // 尺寸
+  --border-radius: 8px;
+  --max-width: 1200px;
+  --nav-height: 70px;
+}
+
+// 响应式断点
+$breakpoints: (
+  'xs': 480px,
+  'sm': 640px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1280px,
+  '2xl': 1536px
+);
+
+// 媒体查询混合器
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+} 
